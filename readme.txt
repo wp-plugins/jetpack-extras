@@ -39,3 +39,4 @@ Requires [WordPress Jetpack](http://wordpress.org/extend/plugins/jetpack/)
 * Original Release, Whole plugin recplacment,
 * Added Pinterest Support,
 * Added additional Twitter options, DNT, Data via/Related,
+* Button Placement Options
