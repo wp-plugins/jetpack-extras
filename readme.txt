@@ -29,6 +29,10 @@ Requires [WordPress Jetpack](http://wordpress.org/extend/plugins/jetpack/)
 2. Activate the plugin through the 'Plugins' menu in WordPress
 3. Settings are inline with existing JetPack settings pages
 
+== Screenshots ==
+
+1. Main Options
+
 == Changelog ==
 
 = 1.5.0 =
