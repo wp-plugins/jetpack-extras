@@ -23,7 +23,7 @@ Which includes the following additions:
 
 == Installation ==
 
-Required [Jetpack](http://wordpress.org/extend/plugins/jetpack/)
+Requires [WordPress Jetpack](http://wordpress.org/extend/plugins/jetpack/)
 
 1. Install either via the WordPress.org plugin directory, or by uploading the files to your server
 2. Activate the plugin through the 'Plugins' menu in WordPress
@@ -31,7 +31,7 @@ Required [Jetpack](http://wordpress.org/extend/plugins/jetpack/)
 
 == Changelog ==
 
-= 1.5.0
+= 1.5.0 =
 * Rewrote plugin to be a separate plugin,
 * Added wp.me support to the Twitter button, so when Tweeting, a Embedded Preview is rendered on Twitter.com [As suggested by SkipTweets on Twitter](http://skipsloan.com/?p=175)
 
