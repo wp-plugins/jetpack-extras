@@ -19,7 +19,7 @@ Which includes the following additions:
 *   A Pinterest PinIt Button as requested on the forums, it will attempt to use the Post/Page Featured Image as the Image to Pin
 *   Additional Twitter button elements/arguments, for recommended Twitter account following (via and related)
 *   Ability to turn on/off the [DNT Twitter](https://dev.twitter.com/docs/tweet-button#optout) button mode
-*   Adds the ability to make the Twitter button share the WP.me url, if that JetPack module in use
+*   Adds the ability to make the Twitter button share the WP.me url, if that JetPack module in use, [As suggested by SkipTweets on Twitter](http://skipsloan.com/?p=175)
 
 == Installation ==
 
