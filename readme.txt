@@ -11,7 +11,7 @@ Extras for WordPress Jetpack.
 
 == Description ==
 
-This plugin adds extra bits an pieces to WordPress Jetpack
+This plugin adds extra bits an pieces to [WordPress Jetpack](http://wordpress.org/extend/plugins/jetpack/)
 
 Which includes the following additions:
 
