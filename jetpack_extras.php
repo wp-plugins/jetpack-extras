@@ -18,6 +18,9 @@ $plugin_dir_url = plugin_dir_url( __FILE__ );
 define( 'JETPACK_META_BASENAME', $plugin_name );
 define( 'JETPACK_EXTRAS_PLUGIN_DIR_URL', $plugin_dir_url );
 
+add_action( 'init', 'jetpack_extras_init', 20 );
+add_action( 'plugins_loaded', 'jetpack_extras_plugins_loaded' );
+
 /**
 Load extra sharing sources
 */
@@ -38,12 +41,10 @@ function jetpack_extras_init() {
 		// actions
 		add_action( 'wp_enqueue_scripts', 'jetpack_extras_wp_enqueue_scripts' );
 		add_action( 'admin_enqueue_scripts', 'jetpack_extras_admin_enqueue_scripts' );
-		add_action( 'plugins_loaded', 'jetpack_extras_plugins_loaded' );
 	} else {
 		add_action('after_plugin_row_' . JETPACK_META_BASENAME, 'jetpack_extras_after_plugin_row', 10, 3);
 	}
 }
-add_action( 'init', 'jetpack_extras_init', 20 );
 
 /**
 Admin
