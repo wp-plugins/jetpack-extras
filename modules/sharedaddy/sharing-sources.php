@@ -24,7 +24,7 @@ class Share_Pinterest_JetPack_Extras extends Sharing_Source {
 }
 
 class Share_Twitter_JetPack_Extras extends Sharing_Advanced_Source {
-	private $smart = true;
+	public $smart = true;
 	private $dnt = false;
 	private $via = '';
 	private $related = '';
