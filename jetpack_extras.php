@@ -60,7 +60,7 @@ Nag
 function jetpack_extras_after_plugin_row($plugin_file, $plugin_data, $plugin_status) {
 	if ( $plugin_file != JETPACK_META_BASENAME )
 		return;
-	echo '<tr class="plugin-update-tr"><td colspan="3" class="plugin-update colspanchange"><div class="update-message">' . __('JetPack Extras Requires, <a href="http://wordpress.org/extend/jetpack/">JetPack</a> to be installed and the Sharing Service Modeule to be Enabled', 'jetpack') . '</div></td></tr>';
+	echo '<tr class="plugin-update-tr"><td colspan="3" class="plugin-update colspanchange"><div class="update-message">' . __('JetPack Extras Requires, <a href="http://wordpress.org/extend/jetpack/">JetPack</a> to be installed and the Sharing Service Module to be Enabled', 'jetpack') . '</div></td></tr>';
 	return;
 }
 
