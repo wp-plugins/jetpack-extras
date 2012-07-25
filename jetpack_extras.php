@@ -16,30 +16,6 @@ $plugin_dir_url = plugin_dir_url( __FILE__ );
 
 define( 'JETPACK_EXTRAS_PLUGIN_DIR_URL', $plugin_dir_url );
 
-function jetpack_extras_plugins_loaded() {
-	add_filter( 'sharing_services', 'jetpack_extras_sharing_services' );
-}
-add_action( 'plugins_loaded', 'jetpack_extras_plugins_loaded' );
-
-function jetpack_extras_sharing_services($services) {
-	$services['twitter'] = 'Share_Twitter_Extended';
-	$services['pinterest'] = 'Share_Pinterest';
-	return $services;
-}
-
-/**
-CSS/JS
-*/
-function jetpack_extras_wp_enqueue_scripts() {
-	wp_enqueue_style( 'jetpack_extras_sharing', JETPACK_EXTRAS_PLUGIN_DIR_URL . 'modules/sharedaddy/sharing.css');
-}
-add_action( 'wp_enqueue_scripts', 'jetpack_extras_wp_enqueue_scripts' );
-
-function jetpack_extras_admin_enqueue_scripts() {
-	wp_enqueue_style( 'jetpack_extras_sharing', JETPACK_EXTRAS_PLUGIN_DIR_URL . 'modules/sharedaddy/admin-sharing.css');
-}
-add_action( 'admin_enqueue_scripts', 'jetpack_extras_admin_enqueue_scripts' );
-
 /**
 Load extra sharing sources
 */
@@ -54,6 +30,11 @@ function jetpack_extras_init() {
 
 		add_filter( 'the_content', 'sharing_display_extra', 19 );
 		add_filter( 'the_excerpt', 'sharing_display_extra', 19 );
+
+		// actions
+		add_action( 'wp_enqueue_scripts', 'jetpack_extras_wp_enqueue_scripts' );
+		add_action( 'admin_enqueue_scripts', 'jetpack_extras_admin_enqueue_scripts' );
+		add_action( 'plugins_loaded', 'jetpack_extras_plugins_loaded' );
 	}
 }
 add_action( 'init', 'jetpack_extras_init', 20 );
@@ -62,11 +43,37 @@ add_action( 'init', 'jetpack_extras_init', 20 );
 Admin
 */
 function jetpack_extras_admin_init() {
-	if ( class_exists( 'Sharing_Admin') ) {
+	if ( class_exists( 'Sharing_Admin' ) ) {
 		add_action( 'sharing_global_options', 'jetpack_extras_sharing_global_options' );
+		add_action( 'sharing_admin_update', 'jetpack_extras_sharing_admin_update' );
 	}
 }
 add_action( 'admin_init', 'jetpack_extras_admin_init', 20 );
+
+/**
+Functions
+*/
+
+function jetpack_extras_plugins_loaded() {
+	add_filter( 'sharing_services', 'jetpack_extras_sharing_services' );
+}
+
+function jetpack_extras_sharing_services($services) {
+	$services['twitter'] = 'Share_Twitter_Extended';
+	$services['pinterest'] = 'Share_Pinterest';
+	return $services;
+}
+
+/**
+CSS/JS
+*/
+function jetpack_extras_wp_enqueue_scripts() {
+	wp_enqueue_style( 'jetpack_extras_sharing', JETPACK_EXTRAS_PLUGIN_DIR_URL . 'modules/sharedaddy/sharing.css');
+}
+
+function jetpack_extras_admin_enqueue_scripts() {
+	wp_enqueue_style( 'jetpack_extras_sharing', JETPACK_EXTRAS_PLUGIN_DIR_URL . 'modules/sharedaddy/admin-sharing.css');
+}
 
 function jetpack_extras_sharing_global_options() {
 	$sharer  = new Sharing_Service();
@@ -98,7 +105,6 @@ function jetpack_extras_sharing_global_options() {
 	return;
 }
 
-add_action( 'sharing_admin_update', 'jetpack_extras_sharing_admin_update' );
 function jetpack_extras_sharing_admin_update() {
 	$options = get_option( 'sharing-options' );
 
