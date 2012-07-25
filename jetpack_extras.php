@@ -23,6 +23,8 @@ Load extra sharing sources
 */
 function jetpack_extras_init() {
 	if (class_exists('Sharing_Source')) {
+		add_filter('plugin_action_links' , 'jetpack_extras_action_link', 10, 2);
+
 		include( $plugin_dir_path . 'modules/sharedaddy/sharing-sources.php' );
 
 		require_once( $plugin_dir_path . 'modules/sharedaddy/sharing-display.php' );
@@ -62,6 +64,11 @@ function jetpack_extras_after_plugin_row($plugin_file, $plugin_data, $plugin_sta
 		return;
 	echo '<tr class="plugin-update-tr"><td colspan="3" class="plugin-update colspanchange"><div class="update-message">' . __('JetPack Extras Requires, <a href="http://wordpress.org/extend/jetpack/">JetPack</a> to be installed and the Sharing Service Module to be Enabled', 'jetpack') . '</div></td></tr>';
 	return;
+}
+function jetpack_extras_action_link($links, $file){
+	if ($file == JETPACK_META_BASENAME)
+		array_unshift($links, '<a href="' . admin_url('options-general.php?page=sharing') . '" title="Settings">' . __('Settings', 'jetpack') . '</a>');
+	return $links;
 }
 
 /**
