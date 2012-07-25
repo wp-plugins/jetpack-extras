@@ -1,7 +1,7 @@
 <?php
 
 
-class Share_Pinterest extends Sharing_Source {
+class Share_Pinterest_JetPack_Extras extends Sharing_Source {
 	public function get_name() {
 		return __( 'Pinterest', 'jetpack' );
 	}
@@ -23,7 +23,7 @@ class Share_Pinterest extends Sharing_Source {
 	}
 }
 
-class Share_Twitter_Extended extends Sharing_Advanced_Source {
+class Share_Twitter_JetPack_Extras extends Sharing_Advanced_Source {
 	private $smart = true;
 	private $dnt = false;
 	private $via = '';

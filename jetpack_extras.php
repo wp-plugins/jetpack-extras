@@ -81,8 +81,8 @@ function jetpack_extras_plugins_loaded() {
 }
 
 function jetpack_extras_sharing_services($services) {
-	$services['twitter'] = 'Share_Twitter_Extended';
-	$services['pinterest'] = 'Share_Pinterest';
+	$services['twitter'] = 'Share_Twitter_JetPack_Extras';
+	$services['pinterest'] = 'Share_Pinterest_JetPack_Extras';
 	return $services;
 }
 
