@@ -3,9 +3,9 @@
 /*
  * Plugin Name: Jetpack Extras by BarryCarlyon
  * Plugin URI: http://barrycarlyon.co.uk/wordpress/category/wordpress/jetpack/
- * Description: Bring the power of the WordPress.com cloud to your self-hosted WordPress. Jetpack enables you to connect your blog to a WordPress.com account to use the powerful features normally only available to WordPress.com users.
+ * Description: Extends WordPress.com's JetPack to include Additional Features
  * Author: Barry Carlyon
- * Version: 1.5
+ * Version: 1.5.1
  * Author URI: http://barrycarlyon.co.uk/wordpress/
  * License: GPL2+
  * Text Domain: jetpack
@@ -44,15 +44,17 @@ add_action( 'admin_enqueue_scripts', 'jetpack_extras_admin_enqueue_scripts' );
 Load extra sharing sources
 */
 function jetpack_extras_init() {
-	include( $plugin_dir_path . 'modules/sharedaddy/sharing-sources.php' );
+	if (class_exists('Sharing_Source')) {
+		include( $plugin_dir_path . 'modules/sharedaddy/sharing-sources.php' );
 
-	require_once( $plugin_dir_path . 'modules/sharedaddy/sharing-display.php' );
+		require_once( $plugin_dir_path . 'modules/sharedaddy/sharing-display.php' );
 
-	remove_filter( 'the_content', 'sharing_display', 19 );
-	remove_filter( 'the_excerpt', 'sharing_display', 19 );
+		remove_filter( 'the_content', 'sharing_display', 19 );
+		remove_filter( 'the_excerpt', 'sharing_display', 19 );
 
-	add_filter( 'the_content', 'sharing_display_extra', 19 );
-	add_filter( 'the_excerpt', 'sharing_display_extra', 19 );
+		add_filter( 'the_content', 'sharing_display_extra', 19 );
+		add_filter( 'the_excerpt', 'sharing_display_extra', 19 );
+	}
 }
 add_action( 'init', 'jetpack_extras_init', 20 );
 
