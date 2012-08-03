@@ -3,7 +3,7 @@ Contributors: BarryCarlyon
 Tags: jetpack, twitter
 Requires at least: 3.4.0
 Tested up to: 3.4.1
-Stable tag: 1.5.0
+Stable tag: 1.6.1.0
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -18,6 +18,8 @@ Which includes the following additions:
 *   Ability to control button placement, above, below, or both of the post content
 
 Used to include Pinterest, this is now Part of JetPack Core.
+
+Twitter button temprarily removed for this Maintainece fix
 
 *   Additional Twitter button elements/arguments, for recommended Twitter account following (via and related)
 *   Ability to turn on/off the [DNT Twitter](https://dev.twitter.com/docs/tweet-button#optout) button mode
@@ -38,6 +40,7 @@ Requires [WordPress Jetpack](http://wordpress.org/extend/plugins/jetpack/)
 == Changelog ==
 
 = 1.6.1.0 =
+* Maintainence Fix
 * Removed Pinterest button as Supported by JetPack Core
 * Class Renames/NameSpacing to Avoid Conflicts
 * Moved Twitter Button to a Separate Twitter button, so you can run Core or Extras
