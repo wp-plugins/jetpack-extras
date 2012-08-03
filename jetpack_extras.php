@@ -51,7 +51,7 @@ function jetpack_extras_admin_init() {
 		add_action( 'sharing_admin_update', 'jetpack_extras_sharing_admin_update' );
 	}
 }
-add_action( 'admin_init', 'jetpack_extras_admin_init', 20 );
+add_action( 'admin_init', 'jetpack_extras_admin_init');
 
 /**
 Nag
@@ -123,6 +123,7 @@ function jetpack_extras_sharing_admin_update() {
 		else
 			$options['placement'][$show] = 'below';
 	}
+	print_r($options);
 
 	update_option( 'jetpack_extras-options', $options );
 
