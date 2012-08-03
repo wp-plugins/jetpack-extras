@@ -1,28 +1,5 @@
 <?php
 
-
-class Share_Pinterest_JetPack_Extras extends Sharing_Source {
-	public function get_name() {
-		return __( 'Pinterest', 'jetpack' );
-	}
-
-	public function get_display( $post ) {
-		return '<div class="pinterest_button"><a href="http://pinterest.com/pin/create/button/?url=' . rawurlencode( apply_filters( 'sharing_permalink', get_permalink( $post->ID ), $post->ID, $this->id ) ) . '&media=' . rawurlencode( wp_get_attachment_url( get_post_thumbnail_id($post->ID) ) ) . '&description=' . rawurlencode( get_the_title( $post->ID ) ) . '" class="pin-it-button" count-layout="horizontal"><img border="0" src="//assets.pinterest.com/images/PinExt.png" title="Pin It" /></a></div>';
-	}
-	
-	public function display_preview() {
-?>
-	<div class="option option-smart-on"></div>
-<?php
-	}
-		
-	public function display_footer() {
-?>
-	<script type="text/javascript" src="//assets.pinterest.com/js/pinit.js"></script>
-<?php
-	}
-}
-
 class Share_Twitter_JetPack_Extras extends Sharing_Advanced_Source {
 	public $smart = true;
 	private $dnt = false;
