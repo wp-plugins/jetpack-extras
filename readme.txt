@@ -16,6 +16,9 @@ This plugin adds extra bits an pieces to [WordPress Jetpack](http://wordpress.or
 Which includes the following additions:
 
 *   Ability to control button placement, above, below, or both of the post content
+
+Used to include Pinterest, this is now Part of JetPack Core.
+
 *   Additional Twitter button elements/arguments, for recommended Twitter account following (via and related)
 *   Ability to turn on/off the [DNT Twitter](https://dev.twitter.com/docs/tweet-button#optout) button mode
 *   Adds the ability to make the Twitter button share the WP.me url, if that JetPack module in use, [As suggested by SkipTweets on Twitter](http://skipsloan.com/?p=175)
@@ -38,6 +41,7 @@ Requires [WordPress Jetpack](http://wordpress.org/extend/plugins/jetpack/)
 * Removed Pinterest button as Supported by JetPack Core
 * Class Renames/NameSpacing to Avoid Conflicts
 * Moved Twitter Button to a Separate Twitter button, so you can run Core or Extras
+* Sanity Check for it JetPack exists or not
 
 = 1.5.0 =
 * Rewrote plugin to be a separate plugin,

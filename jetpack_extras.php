@@ -82,9 +82,7 @@ function jetpack_extras_sharing_services($services) {
 }
 
 function jetpack_extras_sharing_global_options() {
-	$sharer  = new Sharing_Service();
-
-	$global  = $sharer->get_global_options();
+	$global  = get_option( 'jetpack_extras-options' );
 	$shows = array_values( get_post_types( array( 'public' => true ) ) );
 	array_unshift( $shows, 'index' );
 
@@ -112,21 +110,21 @@ function jetpack_extras_sharing_global_options() {
 }
 
 function jetpack_extras_sharing_admin_update() {
-	$options = get_option( 'sharing-options' );
+	$options = get_option( 'jetpack_extras-options' );
 
 	$shows = array_values( get_post_types( array( 'public' => true ) ) );
 	array_unshift( $shows, 'index' );
 
 	// Placement optoons
-	$options['global']['placement'] = array();
+	$options['placement'] = array();
 	foreach ( $shows as $show ) {
 		if ( isset( $_POST['placement'][$show] ) && in_array( $_POST['placement'][$show], array( 'below', 'above', 'both' ) ) )
-			$options['global']['placement'][$show] = $_POST['placement'][$show];
+			$options['placement'][$show] = $_POST['placement'][$show];
 		else
-			$options['global']['placement'][$show] = 'below';
+			$options['placement'][$show] = 'below';
 	}
 
-	update_option( 'sharing-options', $options );
+	update_option( 'jetpack_extras-options', $options );
 
 	return;
 }

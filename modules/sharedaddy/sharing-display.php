@@ -113,11 +113,12 @@ function sharing_display_extra( $text = '' ) {
 		}
 	}
 	
+	$options = get_option( 'jetpack_extras-options' );
 	$option = '';
 	if ( is_single() ) {
-		$option = isset($global['placement'][get_post_type()]) ? $global['placement'][get_post_type()] : 'below';
+		$option = isset($options['placement'][get_post_type()]) ? $options['placement'][get_post_type()] : 'below';
 	} else {
-		$option = $global['placement']['index'];
+		$option = $options['placement']['index'];
 	}
 
 	switch($option) {
