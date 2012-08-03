@@ -19,7 +19,7 @@ Which includes the following additions:
 
 This Plugin Used to include a Pinterest, however this is now Part of JetPack Core.
 
-Twitter button temprarily removed for this Maintainece fix
+Twitter button temporarily removed for this Maintenance fix
 
 *   Additional Twitter button elements/arguments, for recommended Twitter account following (via and related)
 *   Ability to turn on/off the [DNT Twitter](https://dev.twitter.com/docs/tweet-button#optout) button mode
