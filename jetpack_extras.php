@@ -5,7 +5,7 @@
  * Plugin URI: http://barrycarlyon.co.uk/wordpress/category/wordpress/jetpack/
  * Description: Extends WordPress.com's JetPack to include Additional Features
  * Author: Barry Carlyon
- * Version: 1.5.1
+ * Version: 1.6.1.0
  * Author URI: http://barrycarlyon.co.uk/wordpress/
  * License: GPL2+
  * Text Domain: jetpack
@@ -37,10 +37,6 @@ function jetpack_extras_init() {
 
 		add_filter( 'the_content', 'sharing_display_extra', 19 );
 		add_filter( 'the_excerpt', 'sharing_display_extra', 19 );
-
-		// actions
-		add_action( 'wp_enqueue_scripts', 'jetpack_extras_wp_enqueue_scripts' );
-		add_action( 'admin_enqueue_scripts', 'jetpack_extras_admin_enqueue_scripts' );
 	} else {
 		add_action('after_plugin_row_' . JETPACK_META_BASENAME, 'jetpack_extras_after_plugin_row', 10, 3);
 	}
@@ -81,20 +77,8 @@ function jetpack_extras_plugins_loaded() {
 }
 
 function jetpack_extras_sharing_services($services) {
-	$services['twitter'] = 'Share_Twitter_JetPack_Extras';
-	$services['pinterest'] = 'Share_Pinterest_JetPack_Extras';
+	$services['twitter_extra'] = 'Share_Twitter_JetPack_Extras';
 	return $services;
-}
-
-/**
-CSS/JS
-*/
-function jetpack_extras_wp_enqueue_scripts() {
-	wp_enqueue_style( 'jetpack_extras_sharing', JETPACK_EXTRAS_PLUGIN_DIR_URL . 'modules/sharedaddy/sharing.css');
-}
-
-function jetpack_extras_admin_enqueue_scripts() {
-	wp_enqueue_style( 'jetpack_extras_sharing', JETPACK_EXTRAS_PLUGIN_DIR_URL . 'modules/sharedaddy/admin-sharing.css');
 }
 
 function jetpack_extras_sharing_global_options() {
