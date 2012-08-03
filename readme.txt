@@ -3,7 +3,7 @@ Contributors: BarryCarlyon
 Tags: jetpack, twitter
 Requires at least: 3.4.0
 Tested up to: 3.4.1
-Stable tag: 1.6.1.0
+Stable tag: 1.5.0
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -17,7 +17,7 @@ Which includes the following additions:
 
 *   Ability to control button placement, above, below, or both of the post content
 
-Used to include Pinterest, this is now Part of JetPack Core.
+This Plugin Used to include a Pinterest, however this is now Part of JetPack Core.
 
 Twitter button temprarily removed for this Maintainece fix
 
