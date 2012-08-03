@@ -19,7 +19,7 @@ define( 'JETPACK_META_BASENAME', $plugin_name );
 define( 'JETPACK_EXTRAS_PLUGIN_DIR_URL', $plugin_dir_url );
 
 add_action( 'init', 'jetpack_extras_init', 20 );
-add_action( 'plugins_loaded', 'jetpack_extras_plugins_loaded' );
+//add_action( 'plugins_loaded', 'jetpack_extras_plugins_loaded' );
 
 /**
 Load extra sharing sources

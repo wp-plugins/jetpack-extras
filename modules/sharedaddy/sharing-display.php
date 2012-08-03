@@ -10,7 +10,7 @@ function sharing_display_extra( $text = '' ) {
 	if ( in_array( 'get_the_excerpt', (array) $wp_current_filter ) ) {
 		return $text;
 	}
-	
+
 	$sharer = new Sharing_Service();
 	$global = $sharer->get_global_options();
 
@@ -31,7 +31,11 @@ function sharing_display_extra( $text = '' ) {
 
 	if ( !empty( $switched_status ) )
 		$show = false;
-
+	
+	// Allow to be used on P2 ajax requests for latest posts.
+	if ( defined( 'DOING_AJAX' ) && DOING_AJAX && isset( $_REQUEST['action'] ) && 'get_latest_posts' == $_REQUEST['action'] )
+		$show = true;
+		
 	$sharing_content = '';
 	
 	if ( $show ) {
@@ -43,29 +47,27 @@ function sharing_display_extra( $text = '' ) {
 			$dir = get_option( 'text_direction' );
 
 			// Wrapper
-			$sharing_content .= '<div class="snap_nopreview sharing robots-nocontent">';
-			$sharing_content .= '<ul>';
+			$sharing_content .= '<div class="sharedaddy sd-sharing-enabled"><div class="robots-nocontent sd-block sd-social sd-social-' . $global['button_style'] . ' sd-sharing">';
+			if ( $global['sharing_label'] != '' )
+				$sharing_content .= '<h3 class="sd-title">' . $global['sharing_label'] . '</h3>';
+			$sharing_content .= '<div class="sd-content"><ul>';
 			
 			// Visible items
 			$visible = '';
-			foreach ( $enabled['visible'] AS $id => $service ) {
+			foreach ( $enabled['visible'] as $id => $service ) {
 				// Individual HTML for sharing service
-				$visible .= '<li class="share-'.$service->get_class().' share-regular">';
-				$visible .= $service->get_display( $post );
-				$visible .= '</li>';
+				$visible .= '<li class="share-' . $service->get_class() . '">' . $service->get_display( $post ) . '</li>';
 			}
 
 			$parts = array();
-			
-			if ( FALSE === $global['sharing_label'] ) {
-				$parts[] = '<li class="sharing_label">' . __( 'Share this:', 'jetpack' ) . '</li>';
-			} elseif ( '' != $global['sharing_label'] ) {
-				$parts[] = '<li class="sharing_label">' . esc_html( $global['sharing_label'] ) . '</li>';
-			}
-
 			$parts[] = $visible;
-			if ( count( $enabled['hidden'] ) > 0 )
-				$parts[] = '<li class="share-custom"><a href="#" class="sharing-anchor">'._x( 'Share', 'dropdown button', 'jetpack' ).'</a></li>';
+			if ( count( $enabled['hidden'] ) > 0 ) {
+				if ( count( $enabled['visible'] ) > 0 )
+					$expand = __( 'More', 'jetpack' );
+				else
+					$expand = __( 'Share', 'jetpack' );
+				$parts[] = '<li><a href="#" class="sharing-anchor sd-button share-more"><span>'.$expand.'</span></a></li>';
+			}
 
 			if ( $dir == 'rtl' )
 				$parts = array_reverse( $parts );
@@ -87,7 +89,7 @@ function sharing_display_extra( $text = '' ) {
 					$sharing_content .= '<ul>';
 	
 				$count = 1;
-				foreach ( $enabled['hidden'] AS $id => $service ) {
+				foreach ( $enabled['hidden'] as $id => $service ) {
 					// Individual HTML for sharing service
 					$sharing_content .= '<li class="share-'.$service->get_class().'">';
 					$sharing_content .= $service->get_display( $post );
@@ -103,10 +105,10 @@ function sharing_display_extra( $text = '' ) {
 				$sharing_content .= '<li class="share-end"></li></ul></div></div>';
 			}
 
-			$sharing_content .= '<div class="sharing-clear"></div></div>';
+			$sharing_content .= '<div class="sharing-clear"></div></div></div></div>';
 			
 			// Register our JS
-			wp_register_script( 'sharing-js', WP_SHARING_PLUGIN_URL .'sharing.js', array( 'jquery' ), '0.1' );
+			wp_register_script( 'sharing-js', plugin_dir_url( __FILE__ ).'sharing.js', array( 'jquery' ), '20120131' );
 			add_action( 'wp_footer', 'sharing_add_footer' );
 		}
 	}

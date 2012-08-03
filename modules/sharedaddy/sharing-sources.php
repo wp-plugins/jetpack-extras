@@ -1,6 +1,8 @@
 <?php
 
 class Share_Twitter_JetPack_Extras extends Sharing_Advanced_Source {
+	var $shortname = 'twitter_extra';
+	
 	public $smart = true;
 	private $dnt = false;
 	private $via = '';
