@@ -17,7 +17,7 @@ Which includes the following additions:
 
 *   Ability to control button placement, above, below, or both of the post content
 
-Used to include Pinterest, this is now Part of JetPack Core.
+This Plugin Used to include a Pinterest, however this is now Part of JetPack Core.
 
 Twitter button temprarily removed for this Maintainece fix
 
