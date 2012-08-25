@@ -3,7 +3,7 @@ Contributors: BarryCarlyon
 Tags: jetpack, twitter
 Requires at least: 3.4.0
 Tested up to: 3.4.1
-Stable tag: 1.6.1.0
+Stable tag: 1.6.1.1
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -38,6 +38,9 @@ Requires [WordPress Jetpack](http://wordpress.org/extend/plugins/jetpack/)
 1. Main Options
 
 == Changelog ==
+
+= 1.6.1.1 =
+* Fixed a woopsie in option saving
 
 = 1.6.1.0 =
 * Maintainence Fix
