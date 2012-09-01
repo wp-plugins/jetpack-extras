@@ -64,8 +64,9 @@ function jetpack_extras_sharing_global_options() {
 					foreach ($global['twitter_related'] as $related) {
 						echo '<input type="text" class="jetpack_extras_twitter_related_input" name="jetpack_extras_twitter_related[]" value="' . $related . '" style="display: block; clear: left;" />';
 					}
+				} else {
+					echo '<input type="text" class="jetpack_extras_twitter_related_input" name="jetpack_extras_twitter_related[]" value="" style="isplay: block; clear: left;" />';
 				}
-				echo '<input type="text" class="jetpack_extras_twitter_related_input" name="jetpack_extras_twitter_related[]" value="" style="isplay: block; clear: left;" />';
 			?>
 			</div>
 			<a href="#" id="jetpack_extras_add_related">Add Another Related Account</a>
