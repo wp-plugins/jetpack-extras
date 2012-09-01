@@ -117,8 +117,8 @@ function jetpack_extras_sharing_admin_update() {
 	$options['twitter_via'] = $_POST['jetpack_extras_twitter_via'];
 
 	$related = array();
-	foreach ($_POST['jetpack_extras_twitter_related'] as $item) {
-		$related[$item] = $_POST['jetpack_extras_twitter_related_desc'];
+	foreach ($_POST['jetpack_extras_twitter_related'] as $index => $item) {
+		$related[$item] = $_POST['jetpack_extras_twitter_related_desc'][$index];
 	}
 	$options['twitter_related'] = $related;
 
