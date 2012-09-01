@@ -28,8 +28,6 @@ function jetpack_extras_init() {
 	if (class_exists('Sharing_Source')) {
 		add_filter('plugin_action_links' , 'jetpack_extras_action_link', 10, 2);
 
-		include( JETPACK_EXTRAS_PLUGIN_DIR_PATH . 'modules/sharedaddy/sharing-sources.php' );
-
 		require_once( JETPACK_EXTRAS_PLUGIN_DIR_PATH . 'modules/sharedaddy/sharing-display.php' );
 
 		// remove core
