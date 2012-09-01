@@ -55,6 +55,7 @@ function jetpack_extras_sharing_global_options() {
 
 		<tr valign="top">
 			<th scope="row"><label><?php _e('Share WP.me Link on Twitter Instead'); ?></label>
+				<br />
 				This renders a preview under the tweet when viewed on Twitter.com
 			</th>
 			<td>
@@ -68,6 +69,7 @@ function jetpack_extras_sharing_global_options() {
 
 		<tr valign="top">
 			<th scope="row"><label><?php _e('Enable DNT'); ?></label>
+				<br />
 				<a href="https://dev.twitter.com/docs/tweet-button#optout">Twitter DNT Details</a>
 			</th>
 			<td>
