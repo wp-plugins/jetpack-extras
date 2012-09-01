@@ -11,6 +11,12 @@ function sharing_display_extra( $text = '' ) {
 		return $text;
 	}
 
+	if ( is_attachment() && in_array( 'the_excerpt', (array) $wp_current_filter ) ) {
+		// Many themes run the_excerpt() conditionally on an attachment page, then run the_content().
+		// We only want to output the sharing buttons once.  Let's stick with the_content().
+		return $text;
+	}
+
 	$sharer = new Sharing_Service();
 	$global = $sharer->get_global_options();
 
@@ -108,7 +114,7 @@ function sharing_display_extra( $text = '' ) {
 			$sharing_content .= '<div class="sharing-clear"></div></div></div></div>';
 			
 			// Register our JS
-			wp_register_script( 'sharing-js', WP_SHARING_PLUGIN_URL .'sharing.js', array( 'jquery' ), '20120131' );
+			wp_register_script( 'sharing-js', WP_SHARING_PLUGIN_URL.'sharing.js', array( 'jquery' ), '20120131' );
 			add_action( 'wp_footer', 'sharing_add_footer' );
 		}
 	}
