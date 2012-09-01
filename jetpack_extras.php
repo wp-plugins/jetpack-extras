@@ -42,8 +42,10 @@ function jetpack_extras_init() {
 
 		// sharing extras
 		require_once( JETPACK_EXTRAS_PLUGIN_DIR_PATH . 'modules/sharedaddy/sharing-extras.php' );
-		// admin
-		require_once( JETPACK_EXTRAS_PLUGIN_DIR_PATH . 'jetpack_extras_admin.php' );
+		if ( is_admin() ) {
+			// admin
+			require_once( JETPACK_EXTRAS_PLUGIN_DIR_PATH . 'jetpack_extras_admin.php' );
+		}
 	} else {
 		add_action('after_plugin_row_' . JETPACK_META_BASENAME, 'jetpack_extras_after_plugin_row', 10, 3);
 	}
