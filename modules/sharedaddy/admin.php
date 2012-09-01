@@ -57,19 +57,25 @@ function jetpack_extras_sharing_global_options() {
 		<td><input type="text" name="jetpack_extras_twitter_via" value="<?php echo $global['twitter_via']; ?>" /></td>
 	</tr>
 	<tr valign="top">
-		<th scope="row"><label>Related Account(s)</label></th>
+		<th scope="row"><label>Related Twitter Handel and Optional Description</label></th>
 		<td><div id="jetpack_extras_twitter_related">
 			<?php
 				if (count($global['twitter_related'])) {
-					foreach ($global['twitter_related'] as $related) {
-						echo '<input type="text" class="jetpack_extras_twitter_related_input" name="jetpack_extras_twitter_related[]" value="' . $related . '" style="display: block; clear: left;" />';
+					foreach ($global['twitter_related'] as $related => $desc) {
+						echo '<div class="jetpack_extras_twitter_related_input" style="isplay: block; clear: left;">';
+						echo '<input type="text" name="jetpack_extras_twitter_related[]" value="' . $related . '" />';
+						echo '<input type="text" name="jetpack_extras_twitter_related_desc[]" value="' . $desc . '" />';
+						echo '</div>';
 					}
 				} else {
-					echo '<input type="text" class="jetpack_extras_twitter_related_input" name="jetpack_extras_twitter_related[]" value="" style="isplay: block; clear: left;" />';
+					echo '<div class="jetpack_extras_twitter_related_input" style="isplay: block; clear: left;">';
+					echo '<input type="text" name="jetpack_extras_twitter_related[]" value="" />';
+					echo '<input type="text" name="jetpack_extras_twitter_related_desc[]" value="" />';
+					echo '</div>';
 				}
 			?>
 			</div>
-			<a href="#" id="jetpack_extras_add_related">Add Another Related Account</a>
+			<a href="#" id="jetpack_extras_add_related">Add Another Related Handle</a>
 		</td>
 	</tr>
 
@@ -101,9 +107,7 @@ function jetpack_extras_sharing_admin_update() {
 
 	$related = array();
 	foreach ($_POST['jetpack_extras_twitter_related'] as $item) {
-		if ($item) {
-			$related[] = $item;
-		}
+		$related[$item] = $_POST['jetpack_extras_twitter_related_desc'];
 	}
 	$options['twitter_related'] = $related;
 

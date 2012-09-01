@@ -10,8 +10,8 @@ function jetpack_extras_sharing_twitter_via($via, $post_id) {
 }
 function jetpack_extras_sharing_twitter_related($related, $post_id) {
 	$global  = get_option( 'jetpack_extras-options', array() );
-	foreach ($global['twitter_related'] as $item) {
-		$related[$item] = '';
+	foreach ($global['twitter_related'] as $item => $desc) {
+		$related[$item] = $desc;
 	}
 	return $related;
 }
