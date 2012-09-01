@@ -3,7 +3,7 @@ Contributors: BarryCarlyon
 Tags: jetpack, twitter
 Requires at least: 3.4.0
 Tested up to: 3.4.1
-Stable tag: 1.6.1.1
+Stable tag: 1.7.0.0
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -45,6 +45,7 @@ Requires [WordPress Jetpack](http://wordpress.org/extend/plugins/jetpack/)
 * Updated display function (sharing)
 * Added Twitter Via and Related options for the new Jetpack Sharing Buttons
 * Related Supports Username, and optinal description
+* Readded WP.me option for Sharing Via Twitter
 
 = 1.6.1.1 =
 * Fixed a woopsie in option saving
