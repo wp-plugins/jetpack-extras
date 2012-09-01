@@ -17,7 +17,7 @@ function jetpack_extras_sharing_admin_scripts() {
 }
 
 /**
-Admin Functions
+Admin Display Functions
 */
 
 function jetpack_extras_sharing_global_options() {
@@ -63,10 +63,10 @@ function jetpack_extras_sharing_global_options() {
 			<?php
 				if (count($global['twitter_related'])) {
 					foreach ($global['twitter_related'] as $related) {
-						echo '<input type="text" class="jetpack_extras_twitter_related_input" name="jetpack_extras_twitter_related[]" value="' . $related . '" style="clear: left;" />';
+						echo '<input type="text" class="jetpack_extras_twitter_related_input" name="jetpack_extras_twitter_related[]" value="' . $related . '" style="display: block; clear: left;" />';
 					}
 				} else {
-					echo '<input type="text" class="jetpack_extras_twitter_related_input" name="jetpack_extras_twitter_related[]" value="" style="clear: left;" />';
+					echo '<input type="text" class="jetpack_extras_twitter_related_input" name="jetpack_extras_twitter_related[]" value="" style="isplay: block; clear: left;" />';
 				}
 			?>
 			</div>
@@ -78,6 +78,10 @@ function jetpack_extras_sharing_global_options() {
 
 	return;
 }
+
+/**
+Admin Save Functions
+*/
 
 function jetpack_extras_sharing_admin_update() {
 	$options = get_option( 'jetpack_extras-options', array() );
