@@ -28,21 +28,22 @@ function jetpack_extras_init() {
 	if (class_exists('Sharing_Source')) {
 		add_filter('plugin_action_links' , 'jetpack_extras_action_link', 10, 2);
 
-		require_once( JETPACK_EXTRAS_PLUGIN_DIR_PATH . 'modules/sharedaddy/sharing-display.php' );
-
-		// remove core
-		remove_filter( 'the_content', 'sharing_display', 19 );
-		remove_filter( 'the_excerpt', 'sharing_display', 19 );
-
-		// add extra
-		add_filter( 'the_content', 'sharing_display_extra', 19 );
-		add_filter( 'the_excerpt', 'sharing_display_extra', 19 );
-
-		// sharing extras
-		require_once( JETPACK_EXTRAS_PLUGIN_DIR_PATH . 'modules/sharedaddy/sharing-extras.php' );
 		if ( is_admin() ) {
 			// admin
 			require_once( JETPACK_EXTRAS_PLUGIN_DIR_PATH . 'modules/sharedaddy/admin.php' );
+		} else {
+			require_once( JETPACK_EXTRAS_PLUGIN_DIR_PATH . 'modules/sharedaddy/sharing-display.php' );
+
+			// remove core
+			remove_filter( 'the_content', 'sharing_display', 19 );
+			remove_filter( 'the_excerpt', 'sharing_display', 19 );
+
+			// add extra
+			add_filter( 'the_content', 'sharing_display_extra', 19 );
+			add_filter( 'the_excerpt', 'sharing_display_extra', 19 );
+
+			// sharing extras
+			require_once( JETPACK_EXTRAS_PLUGIN_DIR_PATH . 'modules/sharedaddy/sharing-extras.php' );
 		}
 	} else {
 		add_action('after_plugin_row_' . JETPACK_META_BASENAME, 'jetpack_extras_after_plugin_row', 10, 3);
