@@ -2,15 +2,14 @@
 
 /**
 Admin
+
+save action is called on init (not admin init)
 */
-function jetpack_extras_admin_init() {
-	if ( class_exists( 'Sharing_Admin' ) ) {
-		add_action( 'sharing_global_options', 'jetpack_extras_sharing_global_options' );
-		add_action( 'sharing_admin_update', 'jetpack_extras_sharing_admin_update' );
-		add_action( 'admin_enqueue_scripts', 'jetpack_extras_sharing_admin_scripts' );
-	}
+if ( class_exists( 'Sharing_Admin' ) ) {
+	add_action( 'sharing_global_options', 'jetpack_extras_sharing_global_options' );
+	add_action( 'sharing_admin_update', 'jetpack_extras_sharing_admin_update' );
+	add_action( 'admin_enqueue_scripts', 'jetpack_extras_sharing_admin_scripts' );
 }
-add_action( 'admin_init', 'jetpack_extras_admin_init');
 
 function jetpack_extras_sharing_admin_scripts() {
 	wp_enqueue_script( 'jetpack_extras_sharing_admin', JETPACK_EXTRAS_PLUGIN_DIR_URL . 'modules/sharedaddy/admin.js', array('jquery') );
@@ -65,9 +64,8 @@ function jetpack_extras_sharing_global_options() {
 					foreach ($global['twitter_related'] as $related) {
 						echo '<input type="text" class="jetpack_extras_twitter_related_input" name="jetpack_extras_twitter_related[]" value="' . $related . '" style="display: block; clear: left;" />';
 					}
-				} else {
-					echo '<input type="text" class="jetpack_extras_twitter_related_input" name="jetpack_extras_twitter_related[]" value="" style="isplay: block; clear: left;" />';
 				}
+				echo '<input type="text" class="jetpack_extras_twitter_related_input" name="jetpack_extras_twitter_related[]" value="" style="isplay: block; clear: left;" />';
 			?>
 			</div>
 			<a href="#" id="jetpack_extras_add_related">Add Another Related Account</a>
