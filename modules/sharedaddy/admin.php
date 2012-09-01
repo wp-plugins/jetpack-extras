@@ -13,7 +13,7 @@ function jetpack_extras_admin_init() {
 add_action( 'admin_init', 'jetpack_extras_admin_init');
 
 function jetpack_extras_sharing_admin_scripts() {
-	wp_enqueue_scripts( 'jetpack_extras_sharing_admin', JETPACK_EXTRAS_PLUGIN_DIR_URL . 'modules/sharedaddy/admin.js', array('jquery') );
+	wp_enqueue_script( 'jetpack_extras_sharing_admin', JETPACK_EXTRAS_PLUGIN_DIR_URL . 'modules/sharedaddy/admin.js', array('jquery') );
 }
 
 /**
