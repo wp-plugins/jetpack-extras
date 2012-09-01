@@ -100,7 +100,9 @@ function jetpack_extras_sharing_admin_update() {
 
 	$related = array();
 	foreach ($_POST['jetpack_extras_twitter_related'] as $item) {
-		$related[] = $item;
+		if ($item) {
+			$related[] = $item;
+		}
 	}
 	$options['twitter_related'] = $related;
 
