@@ -5,9 +5,9 @@ function jetpack_extras_sharing_twitter_via($via, $post_id) {
 	$global  = get_option( 'jetpack_extras-options', array() );
 	$via = $global['twitter_via'];
 	// dnt?
-	if ($global['enable_dnt']) {
-		$via .= '&dnt=true';
-	}
+//	if ($global['enable_dnt']) {
+//		$via .= '&dnt=true';
+//	}
 	return $via;
 }
 

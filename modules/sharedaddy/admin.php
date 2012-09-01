@@ -66,7 +66,7 @@ function jetpack_extras_sharing_global_options() {
 				?> />
 			</td>
 		</tr>
-
+<!--
 		<tr valign="top">
 			<th scope="row"><label><?php _e('Enable DNT'); ?></label>
 				<br />
@@ -80,7 +80,7 @@ function jetpack_extras_sharing_global_options() {
 				?> />
 			</td>
 		</tr>
-
+-->
 
 	<tr valign="top">
 		<th scope="row"><label>Via Account</label></th>
@@ -142,7 +142,7 @@ function jetpack_extras_sharing_admin_update() {
 	$options['twitter_related'] = $related;
 
 	$options['use_wpme'] = $_POST['jetpack_extras_use_wpme'] ? 1 : 0;
-	$options['enable_dnt'] = $_POST['jetpack_extras_enable_dnt'] ? 1 : 0;
+//	$options['enable_dnt'] = $_POST['jetpack_extras_enable_dnt'] ? 1 : 0;
 
 	update_option( 'jetpack_extras-options', $options );
 
