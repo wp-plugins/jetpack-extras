@@ -35,7 +35,7 @@ function jetpack_extras_sharing_global_options() {
 
 	<tr valign="top">
 		<td></td>
-		<th scope="row"><label><?php __('Twitter Options'); ?></label></th>
+		<th scope="row"><label><?php _e('Twitter Options'); ?></label></th>
 	</tr>
 	<tr valign="top">
 		<th scope="row"><label>Via Account</label></th>
