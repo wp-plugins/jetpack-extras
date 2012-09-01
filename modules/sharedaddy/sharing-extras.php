@@ -19,7 +19,10 @@ function jetpack_extras_sharing_twitter_related($related, $post_id) {
 add_filter('sharing_permalink', 'jetpack_extras_sharing_permalink', 10, 3);
 function jetpack_extras_sharing_permalink($url, $post_id, $button) {
 	if (function_exists('wpme_get_shortlink')) {
-		$url = wpme_get_shortlink($post_id);
+		$global  = get_option( 'jetpack_extras-options', array() );
+		if ($global['use_wpme']) {
+			$url = wpme_get_shortlink($post_id);
+		}
 	}
 	return $url;
 }
