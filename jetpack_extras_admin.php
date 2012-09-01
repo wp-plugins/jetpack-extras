@@ -6,7 +6,7 @@ Admin Functions
 
 function jetpack_extras_sharing_global_options() {
 	// display options
-	$global  = get_option( 'jetpack_extras-options' );
+	$global  = get_option( 'jetpack_extras-options', array() );
 	$shows = array_values( get_post_types( array( 'public' => true ) ) );
 	array_unshift( $shows, 'index' );
 
@@ -39,7 +39,11 @@ function jetpack_extras_sharing_global_options() {
 	</tr>
 	<tr valign="top">
 		<th scope="row"><label>Via Account</label></th>
-		<td><input type="text" name="jetpack_extras_twitter_via"
+		<td><input type="text" name="jetpack_extras_twitter_via" value="<?php echo $global['twitter_via']; ?>" /></td>
+	</tr>
+	<tr valign="top">
+		<th scope="row"><label>Related Account(s), comma separate</label></th>
+		<td><input type="text" name="jetpack_extras_twitter_related" value="<?php echo $global['twitter_related']; ?>" /></td>
 	</tr>
 
 	<?php
@@ -48,7 +52,7 @@ function jetpack_extras_sharing_global_options() {
 }
 
 function jetpack_extras_sharing_admin_update() {
-	$options = get_option( 'jetpack_extras-options' );
+	$options = get_option( 'jetpack_extras-options', array() );
 
 	$shows = array_values( get_post_types( array( 'public' => true ) ) );
 	array_unshift( $shows, 'index' );
@@ -61,6 +65,9 @@ function jetpack_extras_sharing_admin_update() {
 		else
 			$options['placement'][$show] = 'below';
 	}
+	// twitter
+	$options['twitter_via'] = $_POST['jetpack_extras_twitter_via'];
+	$options['twitter_related'] = $_POST['jetpack_extras_twitter_related'];
 
 	update_option( 'jetpack_extras-options', $options );
 

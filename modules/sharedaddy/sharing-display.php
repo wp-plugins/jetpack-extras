@@ -119,7 +119,7 @@ function sharing_display_extra( $text = '' ) {
 		}
 	}
 	
-	$options = get_option( 'jetpack_extras-options' );
+	$options = get_option( 'jetpack_extras-options', array() );
 	$option = '';
 	if ( is_single() ) {
 		$option = isset($options['placement'][get_post_type()]) ? $options['placement'][get_post_type()] : 'below';
