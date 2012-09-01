@@ -63,10 +63,10 @@ function jetpack_extras_sharing_global_options() {
 			<?php
 				if (count($global['twitter_related'])) {
 					foreach ($global['twitter_related'] as $related) {
-						echo '<input type="text" class="jetpack_extras_twitter_related_input" name="jetpack_extras_twitter_related[]" value="' . $related . '" /><br />';
+						echo '<input type="text" class="jetpack_extras_twitter_related_input" name="jetpack_extras_twitter_related[]" value="' . $related . '" style="clear: left;" />';
 					}
 				} else {
-					echo '<input type="text" class="jetpack_extras_twitter_related_input" name="jetpack_extras_twitter_related[]" value="" />';
+					echo '<input type="text" class="jetpack_extras_twitter_related_input" name="jetpack_extras_twitter_related[]" value="" style="clear: left;" />';
 				}
 			?>
 			</div>
