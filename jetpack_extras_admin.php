@@ -42,8 +42,14 @@ function jetpack_extras_sharing_global_options() {
 		<td><input type="text" name="jetpack_extras_twitter_via" value="<?php echo $global['twitter_via']; ?>" /></td>
 	</tr>
 	<tr valign="top">
-		<th scope="row"><label>Related Account(s), comma separate</label></th>
-		<td><input type="text" name="jetpack_extras_twitter_related" value="<?php echo $global['twitter_related']; ?>" /></td>
+		<th scope="row"><label>Related Account(s)</label></th>
+		<td>
+			<?php
+				foreach ($global['twitter_related'] as $related) {
+					echo '<input type="text" name="jetpack_extras_twitter_related[]" value="' . $related . '" />';
+				}
+			?>
+		</td>
 	</tr>
 
 	<?php
