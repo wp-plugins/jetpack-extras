@@ -97,7 +97,12 @@ function jetpack_extras_sharing_admin_update() {
 	}
 	// twitter
 	$options['twitter_via'] = $_POST['jetpack_extras_twitter_via'];
-	$options['twitter_related'] = $_POST['jetpack_extras_twitter_related'];
+
+	$related = array();
+	foreach ($_POST['jetpack_extras_twitter_related'] as $item) {
+		$related[] = $item;
+	}
+	$options['twitter_related'] = $related;
 
 	update_option( 'jetpack_extras-options', $options );
 
