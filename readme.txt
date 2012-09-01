@@ -19,7 +19,9 @@ Which includes the following additions:
 
 This Plugin Used to include a Pinterest sharing button, however this is now Part of JetPack Core.
 
-*   Additional Twitter button elements/arguments, for recommended Twitter account following (via and related)
+*   Twitter Button added Via
+*   Twitter Button added Related (username/optional description format)
+
 *   Ability to turn on/off the [DNT Twitter](https://dev.twitter.com/docs/tweet-button#optout) button mode
 *   Adds the ability to make the Twitter button share the WP.me url, if that JetPack module in use, [As suggested by SkipTweets on Twitter](http://skipsloan.com/?p=175)
 
@@ -39,7 +41,8 @@ Requires [WordPress Jetpack](http://wordpress.org/extend/plugins/jetpack/)
 
 = 1.7 =
 * Updated display function (sharing)
-* Added Twitter Via/Related options via the new Jetpack Core functions
+* Added Twitter Via and Related options for the new Jetpack Sharing Buttons
+* Related Supports Username, and optinal description
 
 = 1.6.1.1 =
 * Fixed a woopsie in option saving
