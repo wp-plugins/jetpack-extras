@@ -43,12 +43,14 @@ function jetpack_extras_sharing_global_options() {
 	</tr>
 	<tr valign="top">
 		<th scope="row"><label>Related Account(s)</label></th>
-		<td>
+		<td id="jetpack_extras_twitter_related">
 			<?php
 				foreach ($global['twitter_related'] as $related) {
-					echo '<input type="text" name="jetpack_extras_twitter_related[]" value="' . $related . '" />';
+					echo '<input type="text" class="jetpack_extras_twitter_related_input" name="jetpack_extras_twitter_related[]" value="' . $related . '" />';
 				}
 			?>
+			<input type="text" class="jetpack_extras_twitter_related_input" name="jetpack_extras_twitter_related[]" value="" />
+			<a href="#" id="jetpack_extras_add_related">Add Another Related Account</a>
 		</td>
 	</tr>
 

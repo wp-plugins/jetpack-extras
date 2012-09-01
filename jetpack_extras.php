@@ -17,6 +17,7 @@ $plugin_dir_url = plugin_dir_url( __FILE__ );
 
 define( 'JETPACK_META_BASENAME', $plugin_name );
 define( 'JETPACK_EXTRAS_PLUGIN_DIR_URL', $plugin_dir_url );
+define( 'JETPACK_EXTRAS_PLUGIN_DIR_PATH', $plugin_dir_path );
 
 add_action( 'init', 'jetpack_extras_init', 20 );
 
@@ -27,9 +28,9 @@ function jetpack_extras_init() {
 	if (class_exists('Sharing_Source')) {
 		add_filter('plugin_action_links' , 'jetpack_extras_action_link', 10, 2);
 
-		include( $plugin_dir_path . 'modules/sharedaddy/sharing-sources.php' );
+		include( JETPACK_EXTRAS_PLUGIN_DIR_PATH . 'modules/sharedaddy/sharing-sources.php' );
 
-		require_once( $plugin_dir_path . 'modules/sharedaddy/sharing-display.php' );
+		require_once( JETPACK_EXTRAS_PLUGIN_DIR_PATH . 'modules/sharedaddy/sharing-display.php' );
 
 		// remove core
 		remove_filter( 'the_content', 'sharing_display', 19 );
@@ -40,9 +41,9 @@ function jetpack_extras_init() {
 		add_filter( 'the_excerpt', 'sharing_display_extra', 19 );
 
 		// sharing extras
-		require_once( $plugin_dir_path . 'modules/sharedaddy/sharing-extras.php' );
+		require_once( JETPACK_EXTRAS_PLUGIN_DIR_PATH . 'modules/sharedaddy/sharing-extras.php' );
 		// admin
-		require_once( $plugin_dir_path . 'jetpack_extras_admin.php' );
+		require_once( JETPACK_EXTRAS_PLUGIN_DIR_PATH . 'jetpack_extras_admin.php' );
 	} else {
 		add_action('after_plugin_row_' . JETPACK_META_BASENAME, 'jetpack_extras_after_plugin_row', 10, 3);
 	}
@@ -55,6 +56,7 @@ function jetpack_extras_admin_init() {
 	if ( class_exists( 'Sharing_Admin' ) ) {
 		add_action( 'sharing_global_options', 'jetpack_extras_sharing_global_options' );
 		add_action( 'sharing_admin_update', 'jetpack_extras_sharing_admin_update' );
+		add_action( 'admin_enqueue_scripts', JETPACK_EXTRAS_PLUGIN_DIR_URL . 'modules/sharedaddy/admin.js', array('jquery'));
 	}
 }
 add_action( 'admin_init', 'jetpack_extras_admin_init');
