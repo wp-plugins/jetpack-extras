@@ -59,7 +59,7 @@ function jetpack_extras_sharing_global_options() {
 	</tr>
 	<tr valign="top">
 		<th scope="row"><label>Related Account(s)</label></th>
-		<td id="jetpack_extras_twitter_related">
+		<td><div id="jetpack_extras_twitter_related">
 			<?php
 				if (count($global['twitter_related'])) {
 					foreach ($global['twitter_related'] as $related) {
@@ -69,6 +69,7 @@ function jetpack_extras_sharing_global_options() {
 					echo '<input type="text" class="jetpack_extras_twitter_related_input" name="jetpack_extras_twitter_related[]" value="" />';
 				}
 			?>
+			</div>
 			<a href="#" id="jetpack_extras_add_related">Add Another Related Account</a>
 		</td>
 	</tr>
