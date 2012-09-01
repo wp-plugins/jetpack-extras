@@ -68,20 +68,20 @@ function jetpack_extras_sharing_global_options() {
 		<td><input type="text" name="jetpack_extras_twitter_via" value="<?php echo $global['twitter_via']; ?>" /></td>
 	</tr>
 	<tr valign="top">
-		<th scope="row"><label>Related Twitter Handel and Optional Description</label></th>
+		<th scope="row"><label>Related Twitter Handle and Optional Description</label></th>
 		<td><div id="jetpack_extras_twitter_related">
 			<?php
 				if (count($global['twitter_related'])) {
 					foreach ($global['twitter_related'] as $related => $desc) {
 						echo '<div class="jetpack_extras_twitter_related_input" style="isplay: block; clear: left;">';
-						echo '<input type="text" name="jetpack_extras_twitter_related[]" value="' . $related . '" />';
-						echo '<input type="text" name="jetpack_extras_twitter_related_desc[]" value="' . $desc . '" />';
+						echo '<table><tr><td>User:<input type="text" name="jetpack_extras_twitter_related[]" value="' . $related . '" /></td>';
+						echo '<td>Desc:<input type="text" name="jetpack_extras_twitter_related_desc[]" value="' . $desc . '" /></td></tr></table>';
 						echo '</div>';
 					}
 				} else {
 					echo '<div class="jetpack_extras_twitter_related_input" style="isplay: block; clear: left;">';
-					echo '<input type="text" name="jetpack_extras_twitter_related[]" value="" />';
-					echo '<input type="text" name="jetpack_extras_twitter_related_desc[]" value="" />';
+					echo '<table><tr><td>User:<input type="text" name="jetpack_extras_twitter_related[]" value="" /></td>';
+					echo '<td>Desc:<input type="text" name="jetpack_extras_twitter_related_desc[]" value="" /></td></tr></table>';
 					echo '</div>';
 				}
 			?>
