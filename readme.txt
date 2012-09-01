@@ -3,7 +3,7 @@ Contributors: BarryCarlyon
 Tags: jetpack, twitter
 Requires at least: 3.4.0
 Tested up to: 3.4.1
-Stable tag: 1.6.1.1
+Stable tag: 1.7.0.0
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -15,15 +15,17 @@ This plugin adds extra bits an pieces to [WordPress Jetpack](http://wordpress.or
 
 Which includes the following additions:
 
-*   Ability to control button placement, above, below, or both of the post content
+*   Ability to control button placement, above, below, or both of the post content, with separate options for the archive page and content display page
 
-This Plugin Used to include a Pinterest, however this is now Part of JetPack Core.
+This Plugin Used to include a Pinterest sharing button, however this is now Part of JetPack Core.
 
-Twitter button temporarily removed for this Maintenance fix
-
-*   Additional Twitter button elements/arguments, for recommended Twitter account following (via and related)
-*   Ability to turn on/off the [DNT Twitter](https://dev.twitter.com/docs/tweet-button#optout) button mode
+*   Twitter Button added Via
+*   Twitter Button added Related (username/optional description format)
 *   Adds the ability to make the Twitter button share the WP.me url, if that JetPack module in use, [As suggested by SkipTweets on Twitter](http://skipsloan.com/?p=175)
+
+Currently removed is, difficult to add without eding chunks of hte core
+*   Ability to turn on/off the [DNT Twitter](https://dev.twitter.com/docs/tweet-button#optout) button mode
+
 
 == Installation ==
 
@@ -38,6 +40,12 @@ Requires [WordPress Jetpack](http://wordpress.org/extend/plugins/jetpack/)
 1. Main Options
 
 == Changelog ==
+
+= 1.7 =
+* Updated display function (sharing)
+* Added Twitter Via and Related options for the new Jetpack Sharing Buttons
+* Related Supports Username, and optinal description
+* Readded WP.me option for Sharing Via Twitter
 
 = 1.6.1.1 =
 * Fixed a woopsie in option saving
