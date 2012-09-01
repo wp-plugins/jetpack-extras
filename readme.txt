@@ -21,7 +21,6 @@ This Plugin Used to include a Pinterest sharing button, however this is now Part
 
 *   Twitter Button added Via
 *   Twitter Button added Related (username/optional description format)
-
 *   Ability to turn on/off the [DNT Twitter](https://dev.twitter.com/docs/tweet-button#optout) button mode
 *   Adds the ability to make the Twitter button share the WP.me url, if that JetPack module in use, [As suggested by SkipTweets on Twitter](http://skipsloan.com/?p=175)
 

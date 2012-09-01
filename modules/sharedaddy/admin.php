@@ -43,18 +43,7 @@ function jetpack_extras_sharing_global_options() {
 				</select>
 			</td>
 		</tr>
-	<?php	endforeach;
-	?>
-		<tr valign="top">
-			<th scope="row"><label><?php _e('Share WP.me Link Instead'); ?></label></th>
-			<td>
-				<input type="checkbox" name="jetpack_extras_use_wpme" <?php
-
-				if ($global['use_wpme'])
-					echo 'checked="checked"';
-				?> />
-			</td>
-		</tr>
+	<?php	endforeach;	?>
 	<?php
 	// twitter options
 	?>
@@ -63,6 +52,34 @@ function jetpack_extras_sharing_global_options() {
 		<td></td>
 		<th scope="row"><label><?php _e('Twitter Options'); ?></label></th>
 	</tr>
+
+		<tr valign="top">
+			<th scope="row"><label><?php _e('Share WP.me Link on Twitter Instead'); ?></label>
+				This renders a preview under the tweet when viewed on Twitter.com
+			</th>
+			<td>
+				<input type="checkbox" name="jetpack_extras_use_wpme" <?php
+
+				if ($global['use_wpme'])
+					echo 'checked="checked"';
+				?> />
+			</td>
+		</tr>
+
+		<tr valign="top">
+			<th scope="row"><label><?php _e('Enable DNT'); ?></label>
+				<a href="https://dev.twitter.com/docs/tweet-button#optout">Twitter DNT Details</a>
+			</th>
+			<td>
+				<input type="checkbox" name="jetpack_extras_enable_dnt" <?php
+
+				if ($global['enable_dnt'])
+					echo 'checked="checked"';
+				?> />
+			</td>
+		</tr>
+
+
 	<tr valign="top">
 		<th scope="row"><label>Via Account</label></th>
 		<td><input type="text" name="jetpack_extras_twitter_via" value="<?php echo $global['twitter_via']; ?>" /></td>
@@ -123,6 +140,7 @@ function jetpack_extras_sharing_admin_update() {
 	$options['twitter_related'] = $related;
 
 	$options['use_wpme'] = $_POST['jetpack_extras_use_wpme'] ? 1 : 0;
+	$options['enable_dnt'] = $_POST['jetpack_extras_enable_dnt'] ? 1 : 0;
 
 	update_option( 'jetpack_extras-options', $options );
 
