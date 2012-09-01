@@ -50,18 +50,6 @@ function jetpack_extras_init() {
 }
 
 /**
-Admin
-*/
-function jetpack_extras_admin_init() {
-	if ( class_exists( 'Sharing_Admin' ) ) {
-		add_action( 'sharing_global_options', 'jetpack_extras_sharing_global_options' );
-		add_action( 'sharing_admin_update', 'jetpack_extras_sharing_admin_update' );
-		add_action( 'admin_enqueue_scripts', JETPACK_EXTRAS_PLUGIN_DIR_URL . 'modules/sharedaddy/admin.js', array('jquery'));
-	}
-}
-add_action( 'admin_init', 'jetpack_extras_admin_init');
-
-/**
 Nag
 */
 function jetpack_extras_after_plugin_row($plugin_file, $plugin_data, $plugin_status) {
