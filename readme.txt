@@ -1,9 +1,10 @@
 === Plugin Name ===
 Contributors: BarryCarlyon
+Donate link: http://barrycarlyon.co.uk/
 Tags: jetpack, twitter
 Requires at least: 3.4.0
 Tested up to: 3.4.1
-Stable tag: 1.6.1.1
+Stable tag: 1.7.1
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -15,15 +16,18 @@ This plugin adds extra bits an pieces to [WordPress Jetpack](http://wordpress.or
 
 Which includes the following additions:
 
-*   Ability to control button placement, above, below, or both of the post content
+*   Ability to control button placement, above, below, or both of the post content, with separate options for the archive page and content display page
 
-This Plugin Used to include a Pinterest, however this is now Part of JetPack Core.
+This Plugin Used to include a Pinterest sharing button, however this is now Part of JetPack Core.
 
-Twitter button temporarily removed for this Maintenance fix
-
-*   Additional Twitter button elements/arguments, for recommended Twitter account following (via and related)
-*   Ability to turn on/off the [DNT Twitter](https://dev.twitter.com/docs/tweet-button#optout) button mode
+*   Twitter Button added Via
+*   Twitter Button added Related (username/optional description format)
 *   Adds the ability to make the Twitter button share the WP.me url, if that JetPack module in use, [As suggested by SkipTweets on Twitter](http://skipsloan.com/?p=175)
+
+Currently removed is:
+
+*   Ability to turn on/off the [DNT Twitter](https://dev.twitter.com/docs/tweet-button#optout) button mode - it is difficult to add without editing chunks of the core
+
 
 == Installation ==
 
@@ -38,6 +42,16 @@ Requires [WordPress Jetpack](http://wordpress.org/extend/plugins/jetpack/)
 1. Main Options
 
 == Changelog ==
+
+= 1.7.1 =
+* Fixing Button placement options for Pages/post types that are not Posts. It was using the wrong key entry, thanks to [TheSuperCargo](http://wordpress.org/support/profile/thesupercargo) for [reporting](http://wordpress.org/support/topic/plugin-jetpack-extras-by-barrycarlyon-share-buttons-placement-on-pages-not-working?replies=3#post-3225923)
+* Also moved the screenshot out of the Zip File into the assets directory to save Zip file size.
+
+= 1.7 =
+* Updated display function (sharing)
+* Added Twitter Via and Related options for the new Jetpack Sharing Buttons
+* Related Supports Username, and optinal description
+* Readded WP.me option for Sharing Via Twitter
 
 = 1.6.1.1 =
 * Fixed a woopsie in option saving
