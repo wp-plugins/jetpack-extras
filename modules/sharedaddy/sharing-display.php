@@ -121,7 +121,7 @@ function sharing_display_extra( $text = '' ) {
 	
 	$options = get_option( 'jetpack_extras-options', array() );
 	$option = '';
-	if ( is_single() ) {
+	if ( is_singular() || is_single() ) {
 		$option = isset($options['placement'][get_post_type()]) ? $options['placement'][get_post_type()] : 'below';
 	} else {
 		$option = $options['placement']['index'];

@@ -5,7 +5,7 @@
  * Plugin URI: http://barrycarlyon.co.uk/wordpress/category/wordpress/jetpack/
  * Description: Extends WordPress.com's JetPack to include Additional Features
  * Author: Barry Carlyon
- * Version: 1.7.0.0
+ * Version: 1.7.1
  * Author URI: http://barrycarlyon.co.uk/wordpress/
  * License: GPL2+
  * Text Domain: jetpack
