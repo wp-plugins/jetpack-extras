@@ -1,6 +1,6 @@
 === Plugin Name ===
 Contributors: BarryCarlyon
-Donate link: http://barrycarlyon.co.uk/
+Donate link: http://barrycarlyon.co.uk/wordpress/wordpress-plugins/jetpack-extras/
 Tags: jetpack, twitter
 Requires at least: 3.4.0
 Tested up to: 3.4.1
