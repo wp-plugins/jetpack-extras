@@ -3,7 +3,7 @@ Contributors: BarryCarlyon
 Donate link: http://barrycarlyon.co.uk/wordpress/wordpress-plugins/jetpack-extras/
 Tags: jetpack, twitter
 Requires at least: 3.4.0
-Tested up to: 3.4.1
+Tested up to: 4.1
 Stable tag: 1.7.1
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -42,6 +42,9 @@ Requires [WordPress Jetpack](http://wordpress.org/extend/plugins/jetpack/)
 1. Main Options
 
 == Changelog ==
+
+= Trunk =
+* Work is being done to Tweak and clean up. But WP4 testing seems ok!
 
 = 1.7.1 =
 * Fixing Button placement options for Pages/post types that are not Posts. It was using the wrong key entry, thanks to [TheSuperCargo](http://wordpress.org/support/profile/thesupercargo) for [reporting](http://wordpress.org/support/topic/plugin-jetpack-extras-by-barrycarlyon-share-buttons-placement-on-pages-not-working?replies=3#post-3225923)

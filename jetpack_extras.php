@@ -2,7 +2,7 @@
 
 /*
  * Plugin Name: Jetpack Extras by BarryCarlyon
- * Plugin URI: hhttp://barrycarlyon.co.uk/wordpress/wordpress-plugins/jetpack-extras/
+ * Plugin URI: http://barrycarlyon.co.uk/wordpress/wordpress-plugins/jetpack-extras/
  * Description: Extends WordPress.com's JetPack to include Additional Features
  * Author: Barry Carlyon
  * Version: 1.7.1
