@@ -18,9 +18,6 @@ Which includes the following additions:
 
 *   Ability to control button placement, above, below, or both of the post content, with separate options for the archive page and content display page
 
-This Plugin Used to include a Pinterest sharing button, however this is now Part of JetPack Core.
-
-*   Twitter Button added Via
 *   Twitter Button added Related (username/optional description format)
 *   Adds the ability to make the Twitter button share the WP.me url, if that JetPack module in use, [As suggested by SkipTweets on Twitter](http://skipsloan.com/?p=175)
 
