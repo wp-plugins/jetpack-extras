@@ -88,7 +88,7 @@ function jetpack_extras_sharing_global_options() {
         <th scope="row"><label>Related Twitter Handle and Optional Description</label></th>
         <td><div id="jetpack_extras_twitter_related">
             <?php
-                if (count($global['twitter_related'])) {
+                if (isset($global['twitter_related']) && count($global['twitter_related'])) {
                     foreach ($global['twitter_related'] as $related => $desc) {
                         echo '<div class="jetpack_extras_twitter_related_input" style="display: block; clear: left;">';
                         echo '<table><tr><td>User:<input type="text" name="jetpack_extras_twitter_related[]" value="' . $related . '" /></td>';
