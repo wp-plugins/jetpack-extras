@@ -3,12 +3,13 @@ Contributors: BarryCarlyon
 Donate link: http://barrycarlyon.co.uk/wordpress/wordpress-plugins/jetpack-extras/
 Tags: jetpack, twitter
 Requires at least: 3.4.0
-Tested up to: 4.1
+Tested up to: 4.1.1
 Stable tag: 3.3
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 Extras for WordPress Jetpack.
+Tested up to Jetpack 3.4.1
 
 == Description ==
 
