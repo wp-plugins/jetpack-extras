@@ -15,6 +15,8 @@ Tested up to Jetpack 3.4.1
 
 This plugin adds extra bits an pieces to [WordPress Jetpack](http://wordpress.org/extend/plugins/jetpack/)
 
+Previous called "Jetpack Extras" renamed at request of Jetpack Team to "Custom Tweaks for Jetpack"
+
 Which includes the following additions:
 
 *   Ability to control button placement, above, below, or both of the post content, with separate options for the archive page and content display page
